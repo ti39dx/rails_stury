@@ -66,6 +66,9 @@ RUN eval "$(rbenv init -)"; rbenv install $RBENV_VERSION \
 &&  eval "$(rbenv init -)"; gem install bundler -f \
 &&  rm -rf /tmp/*
 
+RUN eval "$(rbenv init -)"; gem install rspec --no-ri --no-rdoc
+RUN eval "$(rbenv init -)"; gem install rails --no-ri --no-rdoc
+
 EXPOSE 3000
 
 CMD ["bash"]
