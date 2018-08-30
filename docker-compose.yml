@@ -1,0 +1,18 @@
+version: "3"
+
+volumes:
+  vendor:
+  datashare:
+
+services:
+  rails:
+    build:
+      context: .
+      dockerfile: ./docker/rails/Dockerfile
+    container_name: "rails"
+    ports:
+      - "3000:3000"
+    tty: true
+    volumes:
+      - .:/work
+      - datashare:/datashare
